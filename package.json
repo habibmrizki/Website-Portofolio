@@ -43,5 +43,13 @@
     "tailwindcss": "^4",
     "three": "^0.181.1",
     "typescript": "^5"
+  },
+  "allowScripts": {
+    "@firebase/util": true,
+    "protobufjs": true,
+    "sharp": true,
+    "unrs-resolver": true
   }
 }
+
+
