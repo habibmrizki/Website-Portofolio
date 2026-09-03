@@ -45,11 +45,9 @@
     "typescript": "^5"
   },
   "allowScripts": {
-    "@firebase/util": true,
-    "protobufjs": true,
-    "sharp": true,
-    "unrs-resolver": true
+    "@firebase/util@1.13.0": true,
+    "protobufjs@7.5.4": true,
+    "sharp@0.34.5": true,
+    "unrs-resolver@1.11.1": true
   }
 }
-
-
