@@ -148,14 +148,14 @@ const About = () => {
           <div
             data-aos="zoom-in"
             data-aos-delay="400"
-            className="flex flex-col lg:flex-row items-center lg:items-start gap-4 w-full"
+            className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 w-full flex-wrap"
           >
             <a
               href="https://nyzdbfhsrvciscywmkrv.supabase.co/storage/v1/object/public/CV/CV-Habib-Muhammad-Rizki.pdf?download=CV-Habib-Muhammad-Rizki.pdf"
               download
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full lg:w-auto px-6 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 border border-purple-400/30 text-white font-semibold transition-all duration-300 flex items-center justify-center gap-2.5 shadow-[0_0_20px_rgba(168,85,247,0.35)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] hover:scale-105 cursor-pointer outline-none focus:outline-none no-underline select-none"
+              className="w-full sm:w-auto shrink-0 px-6 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 border border-purple-400/30 text-white font-semibold transition-all duration-300 flex items-center justify-center gap-2.5 shadow-[0_0_20px_rgba(168,85,247,0.35)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] hover:scale-105 cursor-pointer outline-none focus:outline-none no-underline select-none"
             >
               <Download className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
               <span>Download CV</span>
@@ -170,7 +170,7 @@ const About = () => {
                   el.scrollIntoView({ behavior: "smooth" });
                 }
               }}
-              className="w-full lg:w-auto px-6 py-2.5 sm:py-3 rounded-xl border border-[#a855f7]/50 text-[#a855f7] font-medium transition-all duration-300 flex items-center justify-center gap-2 hover:bg-[#a855f7]/10 hover:scale-105 cursor-pointer outline-none focus:outline-none no-underline select-none"
+              className="w-full sm:w-auto shrink-0 px-6 py-2.5 sm:py-3 rounded-xl border border-[#a855f7]/50 text-[#a855f7] font-medium transition-all duration-300 flex items-center justify-center gap-2 hover:bg-[#a855f7]/10 hover:scale-105 cursor-pointer outline-none focus:outline-none no-underline select-none"
             >
               <Code className="w-4 h-4 sm:w-5 sm:h-5" />
               <span>View Projects</span>
