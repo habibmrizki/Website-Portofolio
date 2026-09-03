@@ -104,7 +104,7 @@ const Navbar = () => {
           onClick={(e) => handleNavClick(e, "home")}
           className="flex items-center gap-3 group z-10 outline-none focus:outline-none focus-visible:outline-none select-none"
         >
-          <div className="relative w-10 h-10 rounded-full overflow-hidden p-px gradient-to-r from-purple-500 via-indigo-500 to-cyan-400">
+          <div className="relative w-10 h-10 rounded-full overflow-hidden p-px bg-gradient-to-r from-purple-500 via-indigo-500 to-cyan-400">
             <div className="w-full h-full bg-[#030014] rounded-full flex items-center justify-center overflow-hidden">
               <Image
                 src="/NavLogo.png"
@@ -115,7 +115,7 @@ const Navbar = () => {
               />
             </div>
           </div>
-          <span className="font-bold text-lg tracking-wide text-transparent bg-clip-text gradient-to-r from-white via-slate-200 to-purple-300 hidden sm:inline-block">
+          <span className="font-bold text-base sm:text-lg tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-purple-300">
             Habib <span className="text-purple-400 font-light">Dev</span>
           </span>
         </Link>
@@ -133,7 +133,7 @@ const Navbar = () => {
                   onClick={(e) => handleNavClick(e, item.sectionId)}
                   className={`relative px-4 py-1.5 text-sm font-medium rounded-full transition-all duration-300 outline-none focus:outline-none focus-visible:outline-none focus:ring-0 select-none ${
                     isActive
-                      ? "text-white gradient-to-r from-purple-600/70 to-indigo-600/70 shadow-[0_0_12px_rgba(168,85,247,0.4)]"
+                      ? "text-white bg-gradient-to-r from-purple-600/70 to-indigo-600/70 shadow-[0_0_12px_rgba(168,85,247,0.4)]"
                       : "text-slate-300 hover:text-white hover:bg-white/10"
                   }`}
                 >
@@ -149,7 +149,7 @@ const Navbar = () => {
           <Link
             href="/#contact"
             onClick={(e) => handleNavClick(e, "contact")}
-            className="flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-full text-white gradient-to-r from-purple-600 via-indigo-600 to-blue-600 hover:from-purple-500 hover:to-indigo-500 border border-purple-400/30 shadow-[0_0_15px_rgba(124,58,237,0.4)] hover:shadow-[0_0_25px_rgba(124,58,237,0.7)] transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 outline-none focus:outline-none focus-visible:outline-none select-none"
+            className="flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-full text-white bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 hover:from-purple-500 hover:to-indigo-500 border border-purple-400/30 shadow-[0_0_15px_rgba(124,58,237,0.4)] hover:shadow-[0_0_25px_rgba(124,58,237,0.7)] transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 outline-none focus:outline-none focus-visible:outline-none select-none"
           >
             <Sparkles className="w-3.5 h-3.5 text-yellow-300 animate-pulse" />
             <span>Lets Talk</span>
@@ -188,7 +188,7 @@ const Navbar = () => {
               <Link
                 href="/#contact"
                 onClick={(e) => handleNavClick(e, "contact")}
-                className="flex items-center justify-center gap-2 w-full py-3 text-sm font-semibold rounded-xl text-white gradient-to-r from-purple-600 to-indigo-600 border border-purple-400/30 shadow-lg shadow-purple-950/50 outline-none focus:outline-none select-none"
+                className="flex items-center justify-center gap-2 w-full py-3 text-sm font-semibold rounded-xl text-white bg-gradient-to-r from-purple-600 to-indigo-600 border border-purple-400/30 shadow-lg shadow-purple-950/50 outline-none focus:outline-none select-none"
               >
                 <Send className="w-4 h-4 text-purple-200" />
                 <span>Contact Me</span>
