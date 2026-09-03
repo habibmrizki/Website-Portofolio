@@ -155,12 +155,10 @@ const About = () => {
               download
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full lg:w-auto"
+              className="w-full lg:w-auto px-6 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 border border-purple-400/30 text-white font-semibold transition-all duration-300 flex items-center justify-center gap-2.5 shadow-[0_0_20px_rgba(168,85,247,0.35)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] hover:scale-105 cursor-pointer outline-none focus:outline-none no-underline select-none"
             >
-              <button className="w-full lg:w-auto px-6 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 border border-purple-400/30 text-white font-semibold transition-all duration-300 flex items-center justify-center gap-2.5 shadow-[0_0_20px_rgba(168,85,247,0.35)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] hover:scale-105 cursor-pointer outline-none">
-                <Download className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                <span>Download CV</span>
-              </button>
+              <Download className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+              <span>Download CV</span>
             </a>
 
             <Link
@@ -172,12 +170,10 @@ const About = () => {
                   el.scrollIntoView({ behavior: "smooth" });
                 }
               }}
-              className="w-full lg:w-auto outline-none focus:outline-none select-none"
+              className="w-full lg:w-auto px-6 py-2.5 sm:py-3 rounded-xl border border-[#a855f7]/50 text-[#a855f7] font-medium transition-all duration-300 flex items-center justify-center gap-2 hover:bg-[#a855f7]/10 hover:scale-105 cursor-pointer outline-none focus:outline-none no-underline select-none"
             >
-              <button className="w-full lg:w-auto px-6 py-2.5 sm:py-3 rounded-xl border border-[#a855f7]/50 text-[#a855f7] font-medium transition-all duration-300 flex items-center justify-center gap-2 hover:bg-[#a855f7]/10 hover:scale-105 cursor-pointer outline-none">
-                <Code className="w-4 h-4 sm:w-5 sm:h-5" />
-                <span>View Projects</span>
-              </button>
+              <Code className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span>View Projects</span>
             </Link>
           </div>
         </div>
