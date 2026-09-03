@@ -33,7 +33,7 @@ const HeroContent = () => {
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 300 }}
           className="Welcome-box flex items-center py-2 px-3.5 border border-purple-500/40 opacity-90 
-             rounded-full cursor-pointer gradient-to-r from-purple-950/80 via-indigo-950/80 to-slate-950/80 
+             rounded-full cursor-pointer bg-gradient-to-r from-purple-950/80 via-indigo-950/80 to-slate-950/80 
              hover:from-purple-900 hover:to-indigo-900 hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] backdrop-blur-md"
         >
           <SparklesIcon className="text-purple-300 mr-2 h-4 w-4 sm:h-5 sm:w-5 animate-pulse" />
@@ -49,7 +49,7 @@ const HeroContent = () => {
         >
           <span>
             Providing
-            <span className="text-transparent bg-clip-text gradient-to-r from-purple-400 via-indigo-300 to-cyan-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-indigo-300 to-cyan-400">
               {" "}
               the best{" "}
             </span>
@@ -73,7 +73,7 @@ const HeroContent = () => {
         >
           <button
             onClick={() => handleScrollTo("portofolio")}
-            className="flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white gradient-to-r from-purple-600 via-indigo-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)] transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
+            className="flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 shadow-[0_0_20px_rgba(168,85,247,0.4)] hover:shadow-[0_0_30px_rgba(168,85,247,0.7)] transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
           >
             <span>Learn More!</span>
             <ArrowRight className="w-4 h-4" />

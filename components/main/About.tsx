@@ -3,7 +3,7 @@
 
 import React, { memo, useEffect, useState, useRef } from "react";
 import Link from "next/link";
-import { Code, Award, Globe, ArrowUpRight } from "lucide-react";
+import { Code, Award, Globe, ArrowUpRight, Download } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { supabase } from "@/services/supabase";
@@ -61,16 +61,16 @@ const ProfileImage = memo(function ProfileImage() {
     >
       <div className="relative group">
         <div className="absolute -inset-6 opacity-25 z-0 hidden sm:block">
-          <div className="absolute inset-0 gradient-to-r from-violet-600 via-indigo-500 to-purple-600 rounded-full blur-2xl animate-spin-slower" />
-          <div className="absolute inset-0 gradient-to-l from-fuchsia-500 via-rose-500 to-pink-600 rounded-full blur-2xl animate-pulse-slow opacity-50" />
-          <div className="absolute inset-0 gradient-to-t from-blue-600 via-cyan-500 to-teal-400 rounded-full blur-2xl animate-float opacity-50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-violet-600 via-indigo-500 to-purple-600 rounded-full blur-2xl animate-spin-slower" />
+          <div className="absolute inset-0 bg-gradient-to-l from-fuchsia-500 via-rose-500 to-pink-600 rounded-full blur-2xl animate-pulse-slow opacity-50" />
+          <div className="absolute inset-0 bg-gradient-to-t from-blue-600 via-cyan-500 to-teal-400 rounded-full blur-2xl animate-float opacity-50" />
         </div>
 
         <div className="relative">
           <div className="w-72 h-72 sm:w-80 sm:h-80 rounded-full overflow-hidden shadow-[0_0_40px_rgba(120,119,198,0.3)] transition-all duration-700 group-hover:scale-105">
             <div className="absolute inset-0 border-4 border-white/20 rounded-full z-20 transition-all duration-700 group-hover:border-white/40" />
 
-            <div className="absolute inset-0 gradient-to-b from-black/10 via-transparent to-black/20 z-10 opacity-60 group-hover:opacity-30 transition-opacity duration-700 hidden sm:block" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/20 z-10 opacity-60 group-hover:opacity-30 transition-opacity duration-700 hidden sm:block" />
 
             <img
               src="/image.png"
@@ -119,7 +119,7 @@ const About = () => {
   return (
     <section
       id="about-me"
-      className="scroll-mt-24 px-6 sm:px-12 lg:px-20 max-w-7xl mx-auto py-12 flex flex-col gap-12"
+      className="scroll-mt-24 px-6 sm:px-12 lg:px-20 max-w-9xl mx-auto py-12 flex flex-col gap-12"
     >
       {/* Upper Grid: Text & Profile Image */}
       <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -129,7 +129,7 @@ const About = () => {
             data-aos="fade-right"
             className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight"
           >
-            <span className="text-transparent bg-clip-text gradient-to-r from-[#6366f1] to-[#a855f7]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] via-indigo-400 to-[#a855f7]">
               Hello, Im
             </span>
             <span className="block text-gray-200">Habib Muhammad Rizki</span>
@@ -157,8 +157,9 @@ const About = () => {
               rel="noopener noreferrer"
               className="w-full lg:w-auto"
             >
-              <button className="w-full lg:w-auto sm:px-6 py-2.5 sm:py-3 rounded-xl gradient-to-r from-[#6366f1] to-[#a855f7] text-white font-medium transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105 cursor-pointer">
-                Download CV
+              <button className="w-full lg:w-auto px-6 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 border border-purple-400/30 text-white font-semibold transition-all duration-300 flex items-center justify-center gap-2.5 shadow-[0_0_20px_rgba(168,85,247,0.35)] hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] hover:scale-105 cursor-pointer outline-none">
+                <Download className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                <span>Download CV</span>
               </button>
             </a>
 
@@ -173,9 +174,9 @@ const About = () => {
               }}
               className="w-full lg:w-auto outline-none focus:outline-none select-none"
             >
-              <button className="w-full lg:w-auto sm:px-6 py-2.5 sm:py-3 rounded-xl border border-[#a855f7]/50 text-[#a855f7] font-medium transition-all duration-300 flex items-center justify-center gap-2 hover:bg-[#a855f7]/10 hover:scale-105 cursor-pointer outline-none">
+              <button className="w-full lg:w-auto px-6 py-2.5 sm:py-3 rounded-xl border border-[#a855f7]/50 text-[#a855f7] font-medium transition-all duration-300 flex items-center justify-center gap-2 hover:bg-[#a855f7]/10 hover:scale-105 cursor-pointer outline-none">
                 <Code className="w-4 h-4 sm:w-5 sm:h-5" />
-                View Projects
+                <span>View Projects</span>
               </button>
             </Link>
           </div>
