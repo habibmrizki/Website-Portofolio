@@ -37,15 +37,21 @@ const Contact = () => {
         }),
       });
 
-      if (!res.ok) throw new Error();
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to send message");
+      }
 
       toast.success("Message sent successfully 🚀");
 
       setName("");
       setEmail("");
       setMessage("");
-    } catch {
-      toast.error("Failed to send message");
+    } catch (err: unknown) {
+      const errorMessage =
+        err instanceof Error ? err.message : "Failed to send message";
+      toast.error(errorMessage);
     } finally {
       setLoading(false);
     }
@@ -65,35 +71,20 @@ const Contact = () => {
         data-aos="fade-up"
         className="w-full max-w-2xl h-full flex flex-col bg-gradient-to-b from-white/10 to-white/5 rounded-2xl backdrop-blur-xl border border-white/10 shadow-2xl p-8"
       >
-        <h2
-          data-aos="fade-up"
-          data-aos-delay="100"
-          className="text-3xl font-semibold text-white mb-2"
-        >
+        <h2 className="text-3xl font-semibold text-white mb-2">
           Get in Touch
         </h2>
 
-        <p
-          data-aos="fade-up"
-          data-aos-delay="150"
-          className="text-gray-300 mb-8"
-        >
+        <p className="text-gray-300 mb-8">
           Have something to discuss? Send me a message and lets talk.
         </p>
 
-        <form
-          onSubmit={handleSubmit}
-          data-aos="fade-up"
-          data-aos-delay="200"
-          className="space-y-5"
-        >
+        <form onSubmit={handleSubmit} className="space-y-5">
           {/* NAME */}
           <div className="relative">
             <User className="absolute left-3 top-3.5 text-gray-400 w-5 h-5" />
             <input
               value={name}
-              data-aos="fade-up"
-              data-aos-delay="250"
               onChange={(e) => setName(e.target.value)}
               placeholder="Your Name"
               className="w-full pl-10 p-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:border-indigo-500"
@@ -101,12 +92,11 @@ const Contact = () => {
           </div>
 
           {/* EMAIL */}
-          <div className="relative ">
+          <div className="relative">
             <Mail className="absolute left-3 top-3.5 text-gray-400 w-5 h-5" />
             <input
+              type="email"
               value={email}
-              data-aos="fade-up"
-              data-aos-delay="300"
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Your Email"
               className="w-full pl-10 p-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:border-indigo-500"
@@ -118,8 +108,6 @@ const Contact = () => {
             <MessageSquare className="absolute left-3 top-4.5 text-gray-400 w-5 h-5" />
             <textarea
               value={message}
-              data-aos="fade-up"
-              data-aos-delay="350"
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Your Message"
               className="w-full pl-10 p-4 min-h-[140px] resize-none rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-400 focus:outline-none focus:border-indigo-500"
@@ -128,10 +116,9 @@ const Contact = () => {
 
           {/* BUTTON */}
           <button
+            type="submit"
             disabled={loading}
-            data-aos="zoom-in"
-            data-aos-delay="400"
-            className="w-full h-12 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-xl font-medium text-white flex items-center justify-center gap-2 hover:scale-[1.02] transition-all disabled:opacity-50"
+            className="w-full h-12 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-xl font-medium text-white flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 cursor-pointer shadow-lg shadow-indigo-500/20"
           >
             <Send className="w-4 h-4" />
             {loading ? "Sending..." : "Send Message"}
@@ -147,3 +134,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
