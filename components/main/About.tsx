@@ -151,7 +151,7 @@ const About = () => {
             className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 w-full flex-wrap"
           >
             <a
-              href="https://nyzdbfhsrvciscywmkrv.supabase.co/storage/v1/object/public/CV/CV-Habib-Muhammad-Rizki.pdf?download=CV-Habib-Muhammad-Rizki.pdf"
+              href="https://nyzdbfhsrvciscywmkrv.supabase.co/storage/v1/object/public/CV/CV%20Habib%20Muhammad%20Rizki%20%20(1).docx"
               download
               target="_blank"
               rel="noopener noreferrer"
