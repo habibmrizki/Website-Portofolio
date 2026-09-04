@@ -107,35 +107,26 @@ const SocialLinks = () => {
   const thirdRow = [github, discord].filter((l): l is SocialLink => Boolean(l));
 
   return (
-    <div
-      data-aos="fade-up"
-      className="w-full flex flex-col gap-7 bg-linear-to-br from-white/10 to-white/5 rounded-2xl p-6 py-8 backdrop-blur-xl"
-    >
-      <h3
-        data-aos="fade-up"
-        data-aos-delay="100"
-        className="text-xl font-semibold text-white  flex items-center gap-2"
-      >
+    <div className="w-full flex flex-col gap-6 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6 py-7 backdrop-blur-xl mt-6 shadow-xl">
+      <h3 className="text-xl font-semibold text-white flex items-center gap-2.5">
         <span className="inline-block w-8 h-1 bg-indigo-500 rounded-full"></span>
         Connect With Me
       </h3>
 
-      <div className="flex flex-col gap-5.5">
-        {/* LINKEDIN */}
+      <div className="flex flex-col gap-4">
+        {/* LINKEDIN - PRIMARY */}
         <a
-          data-aos="zoom-in"
-          data-aos-delay="150"
           href={linkedIn.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative flex items-center justify-between p-4 rounded-lg bg-white/5 border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-500"
+          className="group relative flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10 overflow-hidden hover:border-purple-500/50 hover:bg-white/10 transition-all duration-300 shadow-md opacity-100"
         >
           <div
-            className={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-linear-to-r ${linkedIn.gradient}`}
+            className={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-gradient-to-r ${linkedIn.gradient}`}
           />
 
           <div className="relative flex items-center gap-4">
-            <div className="relative p-2 rounded-md">
+            <div className="relative p-2.5 rounded-lg bg-white/5 border border-white/10">
               <linkedIn.icon
                 className="w-6 h-6"
                 style={{ color: linkedIn.color }}
@@ -143,72 +134,72 @@ const SocialLinks = () => {
             </div>
 
             <div className="flex flex-col">
-              <span className="text-lg font-bold text-gray-200">
+              <span className="text-base font-bold text-gray-100 group-hover:text-white transition-colors">
                 {linkedIn.displayName}
               </span>
-              <span className="text-sm text-gray-400">{linkedIn.subText}</span>
+              <span className="text-xs text-gray-400">{linkedIn.subText}</span>
             </div>
           </div>
 
-          <ExternalLink className="w-5 h-5 text-gray-500" />
+          <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
         </a>
 
-        {/* SECOND ROW */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {secondRow.map((link, i) => (
+        {/* SECOND ROW: INSTAGRAM & YOUTUBE */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          {secondRow.map((link) => (
             <a
-              data-aos="fade-up"
-              data-aos-delay={200 + i * 80}
               key={link.name}
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-500"
+              className="group relative flex items-center gap-3.5 p-3.5 rounded-xl bg-white/5 border border-white/10 overflow-hidden hover:border-purple-500/50 hover:bg-white/10 transition-all duration-300 shadow-md opacity-100"
             >
               <div
-                className={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-linear-to-r ${link.gradient}`}
+                className={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-gradient-to-r ${link.gradient}`}
               />
 
-              <link.icon className="w-5 h-5" style={{ color: link.color }} />
-
-              <div className="flex flex-col">
-                <span className="text-sm font-bold text-gray-200">
-                  {link.displayName}
-                </span>
-                <span className="text-xs text-gray-400">{link.subText}</span>
+              <div className="relative p-2 rounded-lg bg-white/5 border border-white/10 shrink-0">
+                <link.icon className="w-5 h-5" style={{ color: link.color }} />
               </div>
 
-              <ExternalLink className="w-4 h-4 ml-auto text-gray-500" />
+              <div className="flex flex-col min-w-0">
+                <span className="text-sm font-bold text-gray-100 group-hover:text-white transition-colors truncate">
+                  {link.displayName}
+                </span>
+                <span className="text-xs text-gray-400 truncate">{link.subText}</span>
+              </div>
+
+              <ExternalLink className="w-4 h-4 ml-auto text-gray-400 group-hover:text-white transition-colors shrink-0" />
             </a>
           ))}
         </div>
 
-        {/* THIRD ROW */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {thirdRow.map((link, i) => (
+        {/* THIRD ROW: GITHUB & DISCORD */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          {thirdRow.map((link) => (
             <a
-              data-aos="fade-up"
-              data-aos-delay={350 + i * 80}
               key={link.name}
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-500"
+              className="group relative flex items-center gap-3.5 p-3.5 rounded-xl bg-white/5 border border-white/10 overflow-hidden hover:border-purple-500/50 hover:bg-white/10 transition-all duration-300 shadow-md opacity-100"
             >
               <div
-                className={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-linear-to-r ${link.gradient}`}
+                className={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-gradient-to-r ${link.gradient}`}
               />
 
-              <link.icon className="w-5 h-5" style={{ color: link.color }} />
-
-              <div className="flex flex-col">
-                <span className="text-sm font-bold text-gray-200">
-                  {link.displayName}
-                </span>
-                <span className="text-xs text-gray-400">{link.subText}</span>
+              <div className="relative p-2 rounded-lg bg-white/5 border border-white/10 shrink-0">
+                <link.icon className="w-5 h-5" style={{ color: link.color }} />
               </div>
 
-              <ExternalLink className="w-4 h-4 ml-auto text-gray-500" />
+              <div className="flex flex-col min-w-0">
+                <span className="text-sm font-bold text-gray-100 group-hover:text-white transition-colors truncate">
+                  {link.displayName}
+                </span>
+                <span className="text-xs text-gray-400 truncate">{link.subText}</span>
+              </div>
+
+              <ExternalLink className="w-4 h-4 ml-auto text-gray-400 group-hover:text-white transition-colors shrink-0" />
             </a>
           ))}
         </div>

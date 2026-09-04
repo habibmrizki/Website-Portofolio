@@ -63,7 +63,7 @@ const Contact = () => {
     <section id="contact" className="w-full">
       <div
         data-aos="fade-up"
-        className="w-full max-w-2xl h-full flex flex-col gradient-to-b from-white/10 to-white/5 rounded-2xl backdrop-blur-xl border border-white/10 shadow-2xl p-8"
+        className="w-full max-w-2xl h-full flex flex-col bg-gradient-to-b from-white/10 to-white/5 rounded-2xl backdrop-blur-xl border border-white/10 shadow-2xl p-8"
       >
         <h2
           data-aos="fade-up"
@@ -131,7 +131,7 @@ const Contact = () => {
             disabled={loading}
             data-aos="zoom-in"
             data-aos-delay="400"
-            className="w-full h-12 gradient-to-r from-[#6366f1] to-[#a855f7] rounded-xl font-medium text-white flex items-center justify-center gap-2 hover:scale-[1.02] transition-all disabled:opacity-50"
+            className="w-full h-12 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-xl font-medium text-white flex items-center justify-center gap-2 hover:scale-[1.02] transition-all disabled:opacity-50"
           >
             <Send className="w-4 h-4" />
             {loading ? "Sending..." : "Send Message"}
