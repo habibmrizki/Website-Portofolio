@@ -8,10 +8,7 @@ import {
   Youtube,
   ExternalLink,
 } from "lucide-react";
-
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { motion } from "framer-motion";
 
 type SocialLink = {
   name: string;
@@ -90,14 +87,6 @@ const SocialLinks = () => {
   const github = socialLinks.find((l) => l.name === "GitHub");
   const discord = socialLinks.find((l) => l.name === "Discord");
 
-  useEffect(() => {
-    AOS.init({
-      once: false,
-      duration: 800,
-      easing: "ease-out-cubic",
-    });
-  }, []);
-
   if (!linkedIn) return null;
 
   const secondRow = [instagram, youtube].filter((l): l is SocialLink =>
@@ -107,19 +96,37 @@ const SocialLinks = () => {
   const thirdRow = [github, discord].filter((l): l is SocialLink => Boolean(l));
 
   return (
-    <div className="w-full flex flex-col gap-6 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6 py-7 backdrop-blur-xl mt-6 shadow-xl">
-      <h3 className="text-xl font-semibold text-white flex items-center gap-2.5">
+    <motion.div
+      initial={{ opacity: 0, y: 25 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="w-full flex flex-col gap-6 bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-6 py-7 backdrop-blur-xl mt-6 shadow-xl"
+    >
+      <motion.h3
+        initial={{ opacity: 0, x: -15 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="text-xl font-semibold text-white flex items-center gap-2.5"
+      >
         <span className="inline-block w-8 h-1 bg-indigo-500 rounded-full"></span>
         Connect With Me
-      </h3>
+      </motion.h3>
 
       <div className="flex flex-col gap-4">
         {/* LINKEDIN - PRIMARY */}
-        <a
+        <motion.a
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          whileHover={{ scale: 1.015 }}
+          whileTap={{ scale: 0.98 }}
           href={linkedIn.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10 overflow-hidden hover:border-purple-500/50 hover:bg-white/10 transition-all duration-300 shadow-md opacity-100"
+          className="group relative flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10 overflow-hidden hover:border-purple-500/50 hover:bg-white/10 transition-all duration-300 shadow-md"
         >
           <div
             className={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-gradient-to-r ${linkedIn.gradient}`}
@@ -142,17 +149,23 @@ const SocialLinks = () => {
           </div>
 
           <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" />
-        </a>
+        </motion.a>
 
         {/* SECOND ROW: INSTAGRAM & YOUTUBE */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-          {secondRow.map((link) => (
-            <a
+          {secondRow.map((link, i) => (
+            <motion.a
               key={link.name}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex items-center gap-3.5 p-3.5 rounded-xl bg-white/5 border border-white/10 overflow-hidden hover:border-purple-500/50 hover:bg-white/10 transition-all duration-300 shadow-md opacity-100"
+              className="group relative flex items-center gap-3.5 p-3.5 rounded-xl bg-white/5 border border-white/10 overflow-hidden hover:border-purple-500/50 hover:bg-white/10 transition-all duration-300 shadow-md"
             >
               <div
                 className={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-gradient-to-r ${link.gradient}`}
@@ -170,19 +183,25 @@ const SocialLinks = () => {
               </div>
 
               <ExternalLink className="w-4 h-4 ml-auto text-gray-400 group-hover:text-white transition-colors shrink-0" />
-            </a>
+            </motion.a>
           ))}
         </div>
 
         {/* THIRD ROW: GITHUB & DISCORD */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-          {thirdRow.map((link) => (
-            <a
+          {thirdRow.map((link, i) => (
+            <motion.a
               key={link.name}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex items-center gap-3.5 p-3.5 rounded-xl bg-white/5 border border-white/10 overflow-hidden hover:border-purple-500/50 hover:bg-white/10 transition-all duration-300 shadow-md opacity-100"
+              className="group relative flex items-center gap-3.5 p-3.5 rounded-xl bg-white/5 border border-white/10 overflow-hidden hover:border-purple-500/50 hover:bg-white/10 transition-all duration-300 shadow-md"
             >
               <div
                 className={`absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-gradient-to-r ${link.gradient}`}
@@ -200,11 +219,11 @@ const SocialLinks = () => {
               </div>
 
               <ExternalLink className="w-4 h-4 ml-auto text-gray-400 group-hover:text-white transition-colors shrink-0" />
-            </a>
+            </motion.a>
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
